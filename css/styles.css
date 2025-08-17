@@ -724,11 +724,13 @@ button:focus {
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
+    margin-top: 8px;
     margin-bottom: 4px;
 }
 
 .container-input {
     position: relative;
+    background-color: transparent;
 }
 
 .form-input {
@@ -743,6 +745,10 @@ button:focus {
 
 .form-input:focus {
     border-color: #4D5AE5;
+}
+
+.form-input:focus+.form-svg {
+    fill: #4D5AE5;
 }
 
 .form-svg {
