@@ -731,6 +731,7 @@ button:focus {
 .container-input {
     position: relative;
     background-color: transparent;
+    display: flex;
 }
 
 .form-input {
@@ -740,6 +741,7 @@ button:focus {
     border-radius: 4px;
     padding-left: 38px;
     outline: transparent;
+    background-color: transparent;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -763,6 +765,10 @@ button:focus {
     fill: #4D5AE5;
 }
 
+.container-comment {
+    margin-bottom: 16px;
+}
+
 .textarea {
     font-size: 12px;
     line-height: 1.17;
@@ -781,6 +787,10 @@ button:focus {
 
 .textarea:focus {
     border-color: #4D5AE5;
+}
+
+input::placeholder {
+    color: #8e8f99;
 }
 
 .checkbox {
@@ -808,14 +818,14 @@ button:focus {
     fill: transparent;
 }
 
-.span-label:checked {
-    background-color: #404bbf;
+.visually-hidden:checked+.checkbox-label .span-label {
+    background-color: var(--blue, #404bbf);
     border: none;
-    fill: #F4F4FD;
+    fill: var(--light, #F4F4FD);
 }
 
 .label-link {
-    color: #4d5ae5;
+    color: var(--accent, #4d5ae5);
 }
 
 .send {
