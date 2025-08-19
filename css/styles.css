@@ -631,7 +631,16 @@ button:focus {
 
 
 
+
+
+
+
+
 .modal-overlay {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
     position: fixed;
     top: 0;
     left: 0;
@@ -640,7 +649,16 @@ button:focus {
     background-color: rgba(46, 47, 66, 0.4);
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), 
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 0;
+    padding: 0;
     
+}
+
+.modal-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
 }
 
 .modal {
@@ -766,7 +784,7 @@ button:focus {
 }
 
 .container-comment {
-    margin-bottom: 16px;
+    margin-bottom: 5px;
 }
 
 .textarea {
@@ -816,12 +834,23 @@ input::placeholder {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1), 
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     fill: transparent;
+    margin-right: 5px;
+}
+
+.checkbox-svg-2 {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: var(--light, #F4F4FD);
 }
 
 .visually-hidden:checked+.checkbox-label .span-label {
     background-color: var(--blue, #404bbf);
     border: none;
-    fill: var(--light, #F4F4FD);
+}
+
+.visually-hidden:checked+.checkbox-label .checkbox-svg-2 {
+    opacity: 1;
 }
 
 .label-link {
@@ -841,9 +870,11 @@ input::placeholder {
     cursor: pointer;
     background-color: #4D5AE5;
     border: none;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     padding: 16px 32px;
     border-radius: 4px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
     margin: 0 auto;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
